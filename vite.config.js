@@ -1,9 +1,21 @@
 import { resolve } from 'path'
 
+const root = resolve(__dirname, 'src');
+const outDir = resolve(__dirname, 'dist')
+
 export default {
-    root: resolve(__dirname, 'src'),
+    root: root,
     build: {
-        outDir: '../dist'
+        outDir: outDir,
+        emptyOutDir:true,
+        rollupOptions:{
+            input: {
+                main: resolve(root, 'index.html'),
+                produits: resolve(root, 'produits.html'),
+                apropos: resolve(root, 'apropos.html'),
+                contact: resolve(root, 'contact.html')
+            }
+        },
     },
     server: {
         port: 8080
