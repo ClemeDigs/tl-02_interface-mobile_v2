@@ -1,5 +1,6 @@
 // Sélection de toutes les modales
 const dialogs = document.querySelectorAll('.dialog');
+const btnsClose = document.querySelectorAll('.btn-close');
 
 function closeDialog(event) {
     const dialog = event.target;
@@ -16,6 +17,7 @@ function closingDialog(dialog) {
 window.addEventListener('click', (e) => {
     const target = e.target;
     const dialogSelector = target.getAttribute('data-dialog');
+
 
     if(dialogSelector){
         const dialog = document.querySelector(dialogSelector);
@@ -44,3 +46,12 @@ dialogs.forEach(dialog => {
         });
     });
 });
+
+btnsClose.forEach(btnClose => {
+    btnClose.addEventListener('click', () => {
+        dialogs.forEach(dialog => {
+            closingDialog(dialog);
+        })
+    })
+})
+

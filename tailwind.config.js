@@ -11,7 +11,10 @@ export default {
       'orangeAlpha': 'rgba(255, 162, 0, 0.5)',
       'dark-typo' : '#2b2b2b',
       'white' : '#ffffff',
-      'modale' : 'rgba(0, 0, 0, 0.5)'
+      'modale' : 'rgba(0, 0, 0, 0.5)',
+      'error' : 'rgb(126, 0, 0)',
+      'valid' : 'green',
+      'grey' : 'grey'
     },
     fontFamily: {
       sans: ['Quicksand', 'sans-serif'],

@@ -1,37 +1,39 @@
 import '../css/styles.css';
+//J'ai importé dialog.js dans chaque page html à cause de l'ordre d'importation.
+/* import './dialog.js'; */
 import Product from "./Product.js";
 import products from './products.js';
-import './dialog.js';
 import LineItem from "./LineItem.js";
 import Cart from "./Cart.js";
 import './search.js';
+import './form.js';
 
 const cart = new Cart();
 
 const productsContainerIndex = document.querySelector('.products-container-index');
 const productsContainerProduits = document.querySelector('.products-container-produits');
 
-products.forEach(product => {
-    productsContainerProduits.appendChild(product.toCardHtml());
-})
 
-//POURQUOI CA NE MARCHE PAS ? On ne peut utiliser qu'une seule fois la méthode toHtml ?
-/* for(let i = 0; i < 4; i++) {
-    productsContainerIndex.appendChild(products[i].toCardHtml());
-} */
+if(productsContainerIndex) {
+    for(let i = 0; i < 4; i++) {
+        productsContainerIndex.appendChild(products[i].toCardHtml());
+    }
+}
 
-const mainCart = document.querySelector('.main-cart');
+if(productsContainerProduits) {
+        products.forEach(product => {
+            productsContainerProduits.appendChild(product.toCardHtml());
+            productsContainerProduits.appendChild(product.toDetailHtml());
+    })
+}
 
 const btnsAddToCart = document.querySelectorAll('.btn-add-to-cart');
+
 btnsAddToCart.forEach((btnAddToCart, index) => {
-btnAddToCart.addEventListener('click', () => {
+    btnAddToCart.addEventListener('click', () => {
         const product = products[index];
-        const lineItem = cart.addOrUpdateLineItem(product);
-        if (lineItem) {
-            mainCart.appendChild(lineItem.toCartHtml());
-        }
-        console.log(cart.getTotal());
+        cart.addOrUpdateLineItem(product);
     });
 });
 
-mainCart.appendChild(cart.toTotalCartHtml());
+

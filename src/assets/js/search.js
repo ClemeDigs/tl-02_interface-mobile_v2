@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialisation du nombre d'articles total et mise à jour du span affichant ce nombre
     let nbArticles = cards.length;
-    spanArticles.textContent = nbArticles;
+    
 
+    if(spanArticles) {
+    spanArticles.textContent = nbArticles;
     // Création de l'élément <p> pour afficher un message lorsque aucun article n'est trouvé
     const noArticle = document.createElement('p');
     noArticle.classList.add('hidden');
@@ -21,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let nbArticles = 0;
         // Valeur de recherche en minuscules pour une correspondance insensible à la casse
         const searchValue = inputSearch.value.toLowerCase();
-        console.log(searchValue);
 
         // Re-sélectionner les cartes pour s'assurer qu'on inclut celles nouvellement ajoutées
         cards = document.querySelectorAll('.carte');
@@ -55,4 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mise à jour du nombre d'articles affiché dans le span
         spanArticles.textContent = nbArticles;
     });
+}
+
 });

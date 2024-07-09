@@ -1,9 +1,5 @@
 import Product from "./Product.js";
 
-//Faire fonctionner les quantités
-//Faire fonctionner les boutons + et -
-
-
 export default class LineItem {
     /**
      * @param {Product} product
@@ -13,10 +9,14 @@ export default class LineItem {
     constructor (product, quantity){
         this.product = product;
         this.quantity = quantity;
-        //Méthode pour arrondir à deux chiffres après la virgule
-        this.total = parseFloat((this.quantity * this.product.price).toFixed(2));
+        this.total = 0;
+        this.updateTotal();
     }
 
+    /**
+     * 
+     * @returns {HTMLDivElement}
+     */
     toCartHtml(){
         const divCart = document.createElement('div');
         const imgCartHtml = document.createElement('img');
@@ -51,15 +51,6 @@ export default class LineItem {
         quantityHtml.className = 'quantity';
         btnAddQuantity.className = 'btn-add font-bold text-lg border px-2 rounded-full transition-all duration-300 hover:bg-orange';
 
-        btnRemoveQuantity.addEventListener('click', () => {
-            this.removeFromCart();
-        });
-
-        //Ne fonctionne pas
-        btnAddQuantity.addEventListener('click', () => {
-            this.quantity++;
-        }); 
-
         divCart.appendChild(imgCartHtml);
         divCart.appendChild(divTextCartHtml);
         divTextCartHtml.appendChild(nameCartHtml);
@@ -71,25 +62,30 @@ export default class LineItem {
         playWithQuantity.appendChild(btnAddQuantity);
         playWithQuantity.appendChild(subTotalHtml);
 
-        //Pris sur internet
     this.element = divCart;
+
     return divCart;
+
     };
 
-    //Pris sur internet
-    removeFromCart() {
-        if (this.element && this.element.parentNode) {
-            this.element.parentNode.removeChild(this.element);
-        }
-        // Implement callback or event to notify Cart to remove this LineItem
-        if (this.onRemove) {
-            this.onRemove(this);
-        }
+    /**
+     * 
+     * @returns {void}
+     */
+    updateTotal() {
+        this.total = parseFloat((this.quantity * this.product.price).toFixed(2));
     }
 
-    setOnRemoveCallback(callback) {
-        this.onRemove = callback;
+
+    /**
+     * 
+     * @returns {void}
+     */
+    updateLineItemQuantity(quantity) {
+        this.quantity = quantity;
+        this.updateTotal();
     }
+    
 }
 
 
