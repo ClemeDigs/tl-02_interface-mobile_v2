@@ -1,8 +1,23 @@
 import Product from "./Product.js";
 
+import imgBarre from '../img/barre-chocolatee.png';
+import imgCookie from '../img/cookies.png';
+import imgBiscottis from '../img/biscottis.png';
+import imgBiscuits from '../img/biscuits-fourres.png';
+import imgPalets from '../img/palets-bretons.png';
+import imgMacarons from '../img/macarons.png';
+import imgChocolats from '../img/chocolats.png';
+import imgTarte from '../img/tarte-citron.png';
+import imgCroissant from '../img/croissant.png';
+
+
+//On définit un tableau de Product, on leur attribue toutes les valeurs des propriétés demandées.
+/**
+ * @type {Product[]}
+*/
 const products = [
     new Product(
-        '../assets/img/barre-chocolatee.png',
+        imgBarre,
         'Barre chocolatée',
         'Barre chocolatée garnie de nougat et caramel maison',
         4.99,
@@ -12,7 +27,7 @@ const products = [
         'barre-detail'
     ),
     new Product(
-        '../assets/img/cookies.png',
+        imgCookie,
         'Cookies',
         'Boite de 6 délicieux cookies aux pépites de chocolat',
         17.99,
@@ -22,7 +37,7 @@ const products = [
         'cookie-detail'
     ),
     new Product(
-        '../assets/img/biscottis.png',
+        imgBiscottis,
         'Biscottis',
         'Sachet de 12 biscottis aux noix et fruits confits',
         14.99,
@@ -32,7 +47,7 @@ const products = [
         'biscottis-detail'
     ),
     new Product(
-        '../assets/img/biscuits-fourres.png',
+        imgBiscuits,
         'Biscuits fourrés',
         'Assortiment de biscuits fourrés au chocolat et caramel maison',
         19.99,
@@ -42,7 +57,7 @@ const products = [
         'biscuits-details'
     ),
     new Product(
-        '../assets/img/palets-bretons.png',
+        imgPalets,
         'Palets Bretons',
         'Boite de palets bretons pur beurre au sel de Guérande',
         12.99,
@@ -52,7 +67,7 @@ const products = [
         'palets-detail'
     ),
     new Product(
-        '../assets/img/macarons.png',
+        imgMacarons,
         'Macarons',
         'Boite de 6 macarons aux saveurs variées',
         19.99,
@@ -62,7 +77,7 @@ const products = [
         'macarons-detail'
     ),
     new Product(
-        '../assets/img/chocolats.png',
+        imgChocolats,
         'Chocolats',
         'Boite de 9 chocolats belges au praliné',
         23.99,
@@ -72,7 +87,7 @@ const products = [
         'chocolats-detail'
     ),
     new Product(
-        '../assets/img/tarte-citron.png',
+        imgTarte,
         'Tarte au citron',
         'Délicieuse tarte au citron meringuée',
         5.99,
@@ -82,7 +97,7 @@ const products = [
         'tarte-detail'
     ),
     new Product(
-        '../assets/img/croissant.png',
+        imgCroissant,
         'Croissant',
         'Croissant pur beurre au beurre des charentes',
         2.99,

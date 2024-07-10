@@ -1,3 +1,4 @@
+//On définit la class Product qui représente un produit.
 export default class Product {
     /**
      * @param {string} img
@@ -10,21 +11,45 @@ export default class Product {
      * @param {string} idDetail
      */
     constructor(img, title, desc, price, id, longDesc, ingredients, idDetail) {
+        /**
+         * @type {string}
+        */
         this.img = img;
+        /**
+         * @type {string}
+        */
         this.title = title;
+        /**
+         * @type {string}
+        */
         this.desc = desc;
+        /**
+         * @type {number}
+        */
         this.price = price;
+        /**
+         * @type {string}
+        */
         this.id = id;
+        /**
+         * @type {string}
+        */
         this.longDesc = longDesc;
+        /**
+         * @type {string}
+        */
         this.ingredients = ingredients;
+        /**
+         * @type {string}
+        */
         this.idDetail = idDetail;
-        this.counter = 1;
     }
 
     /**
      * 
      * @returns {HTMLDivElement}
      */
+    //Cette méthode retourne la carte produit de base, qui sera affichée dans le product-container.
     toCardHtml(){
         const cardHtml = document.createElement ('div');
         cardHtml.setAttribute('data-search', this.title)
@@ -80,6 +105,7 @@ export default class Product {
      * 
      * @returns {HTMLDivElement}
      */
+    //Cette méthode retourne la fiche produit qui s'affichera quand l'utilisateur cliquera sur le bouton en savoir plus. Elle est cachée de base. 
     toDetailHtml(){
         const modaleDetailHtml = document.createElement('div');
         const cardDetailHtml = document.createElement('section');

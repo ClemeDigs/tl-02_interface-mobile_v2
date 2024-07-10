@@ -1,20 +1,29 @@
 import Product from "./Product.js";
 
+//On définit la class LineItem qui représente une ligne de produit dans le panier. On lui associe une quantité et un total pour chaque ligne.
 export default class LineItem {
     /**
      * @param {Product} product
      * @param {number} quantity
-     * @param {number} total
      */
     constructor (product, quantity){
+        /**
+         * @type {Product}
+        */
         this.product = product;
+        /**
+         * @type {number}
+        */
         this.quantity = quantity;
+        /**
+         * @type {number}
+        */
         this.total = 0;
         this.updateTotal();
     }
 
+    //Méthode qui retourne la carte produit qui sera affichée dans le panier.
     /**
-     * 
      * @returns {HTMLDivElement}
      */
     toCartHtml(){
@@ -63,29 +72,26 @@ export default class LineItem {
         playWithQuantity.appendChild(subTotalHtml);
 
     this.element = divCart;
-
     return divCart;
-
     };
 
+    // Méthode qui met à jour le total pour un lineItem en multipliant la quantité du produit par son prix, arrondit à deux chiffres après la virgule.
     /**
-     * 
      * @returns {void}
      */
     updateTotal() {
         this.total = parseFloat((this.quantity * this.product.price).toFixed(2));
     }
 
-
+    // Méthode qui met à jour la quantité d'un lineItem et appelle la méthode updateTotal pour recalculer le total en conséquence.
     /**
-     * 
+     * @param {number} quantity
      * @returns {void}
      */
     updateLineItemQuantity(quantity) {
         this.quantity = quantity;
         this.updateTotal();
     }
-    
 }
 
 
