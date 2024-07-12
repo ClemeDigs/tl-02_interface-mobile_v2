@@ -23,23 +23,21 @@ const productsContainerIndex = document.querySelector('.products-container-index
 */
 const productsContainerProduits = document.querySelector('.products-container-produits');
 
-// Fonction pour ajouter des produits et leurs détails au conteneur
-function addProductsToContainer(container, productArray) {
-    productArray.forEach(product => {
-        container.appendChild(product.toCardHtml());
-        container.appendChild(product.toDetailHtml());
-    });
-}
+//Afficher les cartes produits et les cartes detail dans le container products de la page produits
+if(productsContainerProduits) {
+    products.forEach(product => {
+        productsContainerProduits.appendChild(product.toCardHtml());
+        productsContainerProduits.appendChild(product.toDetailHtml());
+    })
+};
 
-// Ajout des 4 premières cartes produits dans la div .products-container-index, dans index.html
-if (productsContainerIndex) {
-    addProductsToContainer(productsContainerIndex, products.slice(0, 4));
-}
-
-// Ajout de toutes les cartes produits dans la div .products-container-produits, dans produits.html
-if (productsContainerProduits) {
-    addProductsToContainer(productsContainerProduits, products);
-}
+//Afficher les 4 premières cartes produits et les cartes detail dans le container products de la page index
+if(productsContainerIndex) {
+    for(let i = 0; i < 4; i++) {
+        productsContainerIndex.appendChild(products[i].toCardHtml());
+        productsContainerIndex.appendChild(products[i].toDetailHtml());
+    }
+};
 
 /**
  * @param {HTMLElement} container

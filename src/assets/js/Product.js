@@ -73,7 +73,7 @@ export default class Product {
         titleHtml.className = "text-xl font-bold";
         descHtml.className = 'italic text-sm';
         priceHtml.className = "font-bold text-lg";
-        divBtns.className = 'flex flex-col lg:flex-row lg:justify-between w-full gap-3 p-3'
+        divBtns.className = 'flex flex-col xl:flex-row xl:justify-between w-full gap-3 p-3'
         btnAddToCart.className = 'btn-add-to-cart px-4 py-2 border rounded-full font-bold hover:shadow-lg transition-all duration-300 hover:bg-orange';
         btnDetail.className = 'btn-detail px-4 py-2 border rounded-full font-bold hover:shadow-lg transition-all duration-300 hover:bg-orange';
 
@@ -102,7 +102,6 @@ export default class Product {
     }
 
     /**
-     * 
      * @returns {HTMLDivElement}
      */
     //Cette méthode retourne la fiche produit qui s'affichera quand l'utilisateur cliquera sur le bouton en savoir plus. Elle est cachée de base. 
