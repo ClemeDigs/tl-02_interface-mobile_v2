@@ -1,6 +1,14 @@
 // Sélection de toutes les modales et de tous les boutons close
+/**
+ * @type {HTMLElement[]}
+ */
 const dialogs = document.querySelectorAll('.dialog');
+
+/**
+ * @type {HTMLElement[]}
+ */
 const btnsClose = document.querySelectorAll('.btn-close');
+
 
 // Fonction qui ferme la modale en supprimant les attributs 'open' et 'closing' et en retirant l'écouteur d'événement 'animationend'
 /**
@@ -58,6 +66,9 @@ dialogs.forEach(dialog => {
     });
 
     // Empêcher la propagation de l'événement clic à l'intérieur de la modale
+    /**
+     * @type {HTMLElement[]}
+     */
     const childrens = dialog.querySelectorAll('& > *');
     childrens.forEach(children => {
         children.addEventListener('click', e => {

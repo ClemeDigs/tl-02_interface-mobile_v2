@@ -1,8 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Sélection de l'élément de recherche, du span affichant le nombre d'articles, du conteneur des produits et des cartes produit
+    /**
+     * @type {HTMLElement}
+     */
     const inputSearch = document.querySelector('.search');
+
+    /**
+     * @type {HTMLElement}
+     */
     const spanArticles = document.querySelector('.nb-articles');
+
+    /**
+     * @type {HTMLElement}
+     */
     const containerProduits = document.querySelector('.products-container-produits');
+
+    /**
+     * @type {HTMLElement[]}
+     */
     let cards = document.querySelectorAll('.carte');
 
     // Initialisation du nombre d'articles total et mise à jour du span affichant ce nombre
