@@ -1,9 +1,8 @@
 import '../css/styles.css';
 //J'ai importé dialog.js dans chaque page html à cause de l'ordre d'importation.
 /* import './dialog.js'; */
-import Product from "./Product.js";
+// code inutile -0.5
 import products from './products.js';
-import LineItem from "./LineItem.js";
 import Cart from "./Cart.js";
 import './search.js';
 import './form.js';
